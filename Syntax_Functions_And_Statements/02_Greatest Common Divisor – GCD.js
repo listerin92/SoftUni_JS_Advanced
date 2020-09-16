@@ -10,4 +10,5 @@ function GreatestCommonDivisor (a, b) {
     }
 }
 
+
 console.log(GreatestCommonDivisor(2154,458));
