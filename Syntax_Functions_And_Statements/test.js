@@ -22,3 +22,13 @@ let double = a => a * 2;
 let doubled = double(5);
 
 console.log(doubled);
+
+let sum = (a,b)=> a+b;
+
+
+function calculate(operation, firstArg, secondArg){
+    let operationResult = operation(firstArg, secondArg);
+    return operationResult;
+}
+let result = calculate(sum, 5, 10);
+console.log(result);
