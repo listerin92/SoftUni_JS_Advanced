@@ -30,4 +30,4 @@ function RoadRadar(arr){
         }
     }
 }
-RoadRadar([120, 'interstate']);
+RoadRadar([200, 'motorway']);
