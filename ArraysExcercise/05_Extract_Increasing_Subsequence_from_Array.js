@@ -11,9 +11,9 @@ function solve(arr) {
     });
 }
 
-solve([1, 
-    2, 
+solve([1,
+    2,
     3,
     4]
-    
+
 );
