@@ -15,9 +15,7 @@ function solve(array) {
     }
     array.sort(sortByLengthThenByAlphabetic);
 
-    array.forEach(element => {
-        console.log(element);
-    });
+console.log(array.join("\n"));
 }
 solve(['Isacc', 'Theodor', 'Jack', 'Harrison', 'George']
 );

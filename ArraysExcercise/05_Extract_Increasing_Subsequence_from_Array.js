@@ -20,16 +20,23 @@ function solve(arr) {
     // });
     // result.forEach(e => console.log(e));
     
-    let max = Number.MIN_SAFE_INTEGER;
-    let output = arr.reduce((acc, curr) =>{
-        if (curr >= max) {
-            max = curr;
-            acc.push(max);
+    // let max = Number.MIN_SAFE_INTEGER;
+    // let output = arr.reduce((acc, curr) =>{
+    //     if (curr >= max) {
+    //         max = curr;
+    //         acc.push(max);
+    //     }
+    //     return acc;
+    // }, []);
+    // console.log(output.join("\n"));
+    
+    const incraseSubSequence = [];
+    arr.forEach(x => {
+        if (x >= Math.max(...incraseSubSequence)) {
+            incraseSubSequence.push(x);
         }
-        return acc;
-    }, []);
-    console.log(output.join("\n"));
-
+    });
+    console.log(incraseSubSequence.join("\n"));
 }
 
 solve([20, 3, 2, 15, 6, 1]);
