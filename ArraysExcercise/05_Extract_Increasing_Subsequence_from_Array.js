@@ -29,7 +29,7 @@ function solve(arr) {
     //     return acc;
     // }, []);
     // console.log(output.join("\n"));
-    
+
     const incraseSubSequence = [];
     arr.forEach(x => {
         if (x >= Math.max(...incraseSubSequence)) {
