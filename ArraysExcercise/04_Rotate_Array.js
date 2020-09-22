@@ -3,15 +3,11 @@ function solve(arr) {
     let l = arr.length;
     let numRotation = n % l;
 
-    let result = '';
     for (let i = 0; i < numRotation; i++) {
         let temp = arr.pop();
         arr.unshift(temp);
     }
-    for (let i = 0; i < arr.length; i++) {
-        result += arr[i] + ' ';
-    }
-    console.log(result.trim());
+    console.log(arr.join(" "));
 }
 
 solve(['Banana',

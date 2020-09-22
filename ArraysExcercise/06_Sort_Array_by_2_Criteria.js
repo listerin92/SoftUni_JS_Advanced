@@ -19,10 +19,5 @@ function solve(array) {
         console.log(element);
     });
 }
-
-solve(['Isacc',
-    'Theodor',
-    'Jack',
-    'Harrison',
-    'George']
+solve(['Isacc', 'Theodor', 'Jack', 'Harrison', 'George']
 );
