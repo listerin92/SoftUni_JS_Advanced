@@ -1,27 +1,28 @@
-function solve(elements){
-    let counter = 0;
+function solve(elements) {
+    let counter = 1;
     let arr = [];
     elements.forEach(element => {
-        counter++;
+
         if (element === 'add') {
             arr.push(counter);
         }
-        else if (element === 'remove' && arr.length !== 0) {
+        else {
             arr.pop();
         }
+        counter++;
     });
+
     if (arr.length !== 0) {
-        arr.forEach(element => {
-            console.log(element);
-        });
+        console.log(arr.join("\n"));
+
     }
-    else{
+    else {
         console.log('Empty');
     }
 }
-solve(['add', 
-'add', 
-'remove', 
-'add', 
-'add']
+solve(['add',
+    'add',
+    'remove',
+    'add',
+    'add']
 );
