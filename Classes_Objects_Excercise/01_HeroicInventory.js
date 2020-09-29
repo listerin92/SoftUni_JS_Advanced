@@ -1,20 +1,14 @@
 function solve(input) {
     let heroes = [];
-    // let data = input.map(x => x.split(' / '));
-    // data.forEach(element => {
-    //     let obj = {
-    //         name: element[0],
-    //         level: element[1],
-    //         items: element[2]
-    //     }
-    //     heroes.push(obj);
-    // });
 
     input.forEach((line) => {
         let [name, level, items] = line.split(" / ");
         level = Number(level);
-        items = items.split(', ');
 
+        items = items 
+        ? items.split(', ')
+        : [];
+        
         let hero = { name, level, items }
         heroes.push(hero);
     });
