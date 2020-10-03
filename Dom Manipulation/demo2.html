@@ -1,0 +1,22 @@
+<html>
+<head><title>My first Page</title></head>
+    <body>
+      <h1>Intro to DOM</h1>  
+      <ul style="cursor: pointer">
+          <li id="method-list-item" class = "list-item">JS</li>
+          <li class = "list-item">C#</li>
+          <li class = "list-item">JAVA</li>
+          <li class = "list-item">Python</li>
+      </ul>
+      <script>
+          let parentElement = document.getElementsByTagName('ul')[0];
+            parentElement.addEventListener('click', onListClick);
+          function onListClick(){
+            let lastElement = parentElement.lastElementChild;
+            parentElement.prepend(lastElement);
+        }
+        console.log(navigator.userAgent);
+        console.log(screen);
+      </script>
+    </body>
+</html>

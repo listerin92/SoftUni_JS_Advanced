@@ -10,6 +10,19 @@
           let h1elements = document.getElementsByTagName('h1');
           let h1element = h1elements[0];
           h1element.innerHTML += ', YEY!';
+          let parentElement = document.querySelector('ul');
+          let newliElement = document.createElement('li');
+          newliElement.textContent = 'Test';
+          
+          let names = [ 'pesho', 'ivan', 'dragan', 'petkan'];
+         
+          names.forEach(name => {
+            let liELement = document.createElement('li');
+            liELement.textContent = name;
+            parentElement.appendChild(liELement);
+          });
+        
+          parentElement.appendChild(newliElement);
       </script>
     </body>
 </html>
