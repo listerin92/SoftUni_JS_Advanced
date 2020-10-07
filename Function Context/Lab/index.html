@@ -11,20 +11,45 @@
 </head>
 
 <body>
-   
+
     <div class="container">
-        <button id="dropdown" >
+        <button id="dropdown">
             Choose your style
         </button>
-        <ul id="dropdown-ul" >
-            <li class = "deep">rgb(255, 143, 143)</li>
-            <li class = "deep1">rgb(250, 215, 151)</li>
-            <li class = "deep2">rgb(251, 251, 167)</li>
-            <li class = "deep3">rgb(228, 255, 173)</li>
-            <li class = "deep4">rgb(174, 174, 251)</li>
+        <ul id="dropdown-ul">
+            <li class="deep">rgb(255, 143, 143)</li>
+            <li class="deep1">rgb(250, 215, 151)</li>
+            <li class="deep2">rgb(251, 251, 167)</li>
+            <li class="deep3">rgb(228, 255, 173)</li>
+            <li class="deep4">rgb(174, 174, 251)</li>
         </ul>
     </div>
-    <div id = "box">Box</div>
+    <div id="box">Box</div>
 </body>
-<script>solve()</script>
+<script>solve()
+    // class Person2 {
+    //     constructor(name) {
+    //         this.name = name;
+    //     }
+    //     speak(message) {
+    //         console.log(`${this.name}: ${message}`);
+    //     }
+    // }
+    // let person2 = new Person('Person');
+    // console.log(person2);
+    function speak(message, endmessage) {
+        this.grades.forEach(grade => {
+            console.log(`${this.name}: ${message} - ${grade}: ${endmessage}`);
+        });
+
+    }
+    let person = {
+        name: 'Pesho',
+        grades: [2, 3, 4, 5, 6],
+    }
+    speak.call(person, 'mesageeas', 'the end');
+    //speak.apply(person);
+    // person.speak.bind();
+</script>
+
 </html>
