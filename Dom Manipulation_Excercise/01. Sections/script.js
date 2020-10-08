@@ -1,25 +1,18 @@
 function create(words) {
-   let parent = document.getElementById('content');
-   
-   words.forEach(element => {
-      console.log(element);
-      let divEL = document.createElement('div');
-      divEL.id = element;
-      divEL.addEventListener('click', showInParagraph);
-      let pEL = document.createElement('p');
-      pEL.innerHTML = element;
-      pEL.style.display = 'none';
+   let content = document.getElementById('content');
 
-      
-      
-      divEL.appendChild(pEL);
-      parent.appendChild(divEL);
+   words.forEach(word => {
+      console.log(word);
+      let div = document.createElement('div');
+      div.id = word;
+      div.addEventListener('click', () => {
+         p.style.display = 'block';
+      });
+      let p = document.createElement('p');
+      p.textContent = word;
+      p.style.display = 'none';
+      div.appendChild(p);
+      content.appendChild(div);
 
    });
-
-   function showInParagraph(event){
-      
-      event.path[0].children[0].style.display = 'block';
-
-   }
 }  
