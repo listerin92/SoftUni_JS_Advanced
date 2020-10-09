@@ -55,6 +55,7 @@ function solve() {
     }
 
   }
+  
   function buy() {
     let boughtItems = [];
     let sum = 0;
@@ -71,16 +72,13 @@ function solve() {
         decFactor += Number(trElements[i].children[3].textContent);
         checkedItems++;
       }
-
     }
 
     decFactor = decFactor / checkedItems;
-
 
     buyList.innerHTML =
       `Bought furniture: ${boughtItems.join(', ')}\n` +
       `Total price: ${sum.toFixed(2)}\n` +
       `Average decoration factor: ${decFactor}`;
   }
-
 }
