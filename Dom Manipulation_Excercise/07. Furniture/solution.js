@@ -62,8 +62,10 @@ function solve() {
     let decFactor = 0
     let checkedItems = 0;
 
-    let trElements = Array.from(document.getElementsByTagName('tr')); // get deeper elements table elements
+    // let trElements = Array.from(document.getElementsByTagName('tr')); not need to be like this.
+    let trElements = document.getElementsByTagName('tr'); // HTMLCollection is array get deeper elements table elements
     console.log(trElements);
+    console.log(document.getElementsByTagName('tr'));
     for (let i = 2; i < trElements.length; i++) {
       if (trElements[i].children[4].children[0].checked) {
 
