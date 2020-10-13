@@ -18,7 +18,7 @@ function solve() {
    }
 
    function record1(e) {
-
+      //should whait to click on the green winner card 
       if (e.target.style.borderColor === 'green') {
          result.firstElementChild.innerHTML = '';
          result.lastElementChild.innerHTML = '';
@@ -46,6 +46,8 @@ function solve() {
    }
 
    function record2(e) {
+      //TODO after check, accept only click on the green card to clear the result
+
       if (e.target.style.borderColor === 'green') {
          result.firstElementChild.innerHTML = '';
          result.lastElementChild.innerHTML = '';
@@ -54,10 +56,11 @@ function solve() {
 
 
       let regex = new RegExp('\\bwhite');
+      const lastClickedDeckOne = hands2Arr[hands2Arr.length - 1].target;
       if (hands2Arr.length > 0
-         && hands2Arr[hands2Arr.length - 1].target.src.match(regex)
-         && hands2Arr[hands2Arr.length - 1].target.style.borderColor !== 'green'
-         && hands2Arr[hands2Arr.length - 1].target.style.borderColor !== 'red') {
+         && lastClickedDeckOne.src.match(regex)
+         && lastClickedDeckOne.target.style.borderColor !== 'green'
+         && lastClickedDeckOne.target.style.borderColor !== 'red') {
          return;
       }
       hand2Count++;
@@ -76,23 +79,30 @@ function solve() {
 
       if (hand1Count === hand2Count) {
 
-         if (Number(hands1Arr[hand1Count].target.name) > Number(hands2Arr[hand2Count].target.name)) {
-            hands1Arr[hand1Count].target.style.borderWidth = '2px';
-            hands1Arr[hand1Count].target.style.borderStyle = 'solid';
-            hands1Arr[hand1Count].target.style.borderColor = 'green';
-            hands2Arr[hand2Count].target.style.borderWidth = '2px';
-            hands2Arr[hand2Count].target.style.borderStyle = 'solid';
-            hands2Arr[hand2Count].target.style.borderColor = 'red';
+         const currentCardDeckOne = hands1Arr[hand1Count].target;
+         const currentCardDeckTwo = hands2Arr[hand2Count].target;
+
+         if (Number(currentCardDeckOne.name) > Number(currentCardDeckTwo.name)) {
+
+            currentCardDeckOne.target.style.borderWidth = '2px';
+            currentCardDeckOne.style.borderStyle = 'solid';
+            currentCardDeckOne.style.borderColor = 'green';
+
+            currentCardDeckTwo.style.borderWidth = '2px';
+            currentCardDeckTwo.style.borderStyle = 'solid';
+            currentCardDeckTwo.style.borderColor = 'red';
 
             addToHistory();
+         } else if (Number(currentCardDeckOne.name) < Number(currentCardDeckTwo.name)) {
+            
+            currentCardDeckOne.style.borderWidth = '2px';
+            currentCardDeckOne.style.borderStyle = 'solid';
+            currentCardDeckOne.style.borderColor = 'red';
 
-         } else if (Number(hands1Arr[hand1Count].target.name) < Number(hands2Arr[hand2Count].target.name)) {
-            hands1Arr[hand1Count].target.style.borderWidth = '2px';
-            hands1Arr[hand1Count].target.style.borderStyle = 'solid';
-            hands1Arr[hand1Count].target.style.borderColor = 'red';
-            hands2Arr[hand2Count].target.style.borderWidth = '2px';
-            hands2Arr[hand2Count].target.style.borderStyle = 'solid';
-            hands2Arr[hand2Count].target.style.borderColor = 'green';
+            currentCardDeckTwo.style.borderWidth = '2px';
+            currentCardDeckTwo.style.borderStyle = 'solid';
+            currentCardDeckTwo.style.borderColor = 'green';
+
             addToHistory();
          }
       }
@@ -100,7 +110,6 @@ function solve() {
       function addToHistory() {
          history.innerHTML += `[${result.firstElementChild.innerHTML}` + ` vs ` +
             `${result.lastElementChild.innerHTML}]` + ` `;
-
       }
 
    }
