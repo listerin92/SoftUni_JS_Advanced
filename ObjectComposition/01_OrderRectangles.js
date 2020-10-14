@@ -1,18 +1,20 @@
 
 function solve(input) {
-    const result = input.map(([width, height]) =>
-        ({
+    const result = input
+        .map(([width, height]) => ({
             width,
             height,
             area: () => width * height,
             compareTo(rect) {
-                let result = this.area() - rect.area();
+                let result = rect.area() - this.area();
 
                 return result == 0
-                    ? this.width - rect.width // if area is equal sort descending by width
-                    : result; //sort descending by area
+                    ? rect.width - this.width // if area is equal sort descending by width
+                    : result //sort descending by area
             }
         }))
-        .sort((a, b) => b.compareTo(a));
+        .sort((a, b) => a.compareTo(b));
     return result;
+
 }
+
