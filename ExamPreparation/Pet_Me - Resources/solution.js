@@ -56,7 +56,11 @@ function solve() {
                 
                 let parentButtonEl = e.currentTarget.parentElement;
                 let liElement = parentButtonEl.parentElement;
+                let inputNewOwner = e.currentTarget.previousSibling;
 
+                if (!inputNewOwner.value) {
+                    return;
+                }
                 adoptedUlElement.appendChild(liElement);
 
                 let inputnNewOwnerValue = liElement.querySelector('input');
@@ -71,11 +75,9 @@ function solve() {
                 checkedButtonEl.textContent = 'Checked';
 
                 liElement.appendChild(checkedButtonEl);
-
                 checkedButtonEl.addEventListener('click', e =>{
-                    liElement.remove();
+                    e.currentTarget.parentElement.remove();
                 })
-                
             });
         })
     });
