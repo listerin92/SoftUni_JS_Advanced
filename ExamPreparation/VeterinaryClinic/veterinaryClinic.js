@@ -6,11 +6,6 @@ class VeterinaryClinic {
         this.currentWorkload = 0;
         this.totalProfit = 0;
     }
-    getClient(ownerName) {
-        let client = this.clients.find(x => x.ownerName == ownerName);
-
-        return client;
-    }
 
     getPet(owner, petName) {
         if (!owner) {
@@ -20,12 +15,16 @@ class VeterinaryClinic {
         return owner.pets.find(x => x.petName == petName);
     }
 
+    getClient(ownerName) {
+        let client = this.clients.find(x => x.ownerName == ownerName);
+
+        return client;
+    }
+
     newCustomer(ownerName, petName, kind, procedures) {
         if (this.currentWorkload >= this.capacity) {
             throw new Error("Sorry, we are not able to accept more patients!");
         }
-
-        // throw error when pet is already register 
         //"This pet is already registered under { ownerName } name! { petName } is on our lists, waiting for { all his procedures separated by ', ' }."
         let currentOwner = this.getClient(ownerName);
         let currentPet = this.getPet(currentOwner, petName);
@@ -70,7 +69,7 @@ class VeterinaryClinic {
         let currentPet = this.getPet(currentOwner, petName);
 
         if (!currentPet || currentPet.procedures.length == 0) {
-            throw new Error(`SOrry, there are no procedures for ${petName}!`)
+            throw new Error(`Sorry, there are no procedures for ${petName}!`)
         }
         this.totalProfit += currentPet.procedures.length * 500;
         this.currentWorkload--;
@@ -80,8 +79,28 @@ class VeterinaryClinic {
         return `Goodbye ${currentPet.petName}. Stay safe!`;
 
     }
+
     toString() {
-        
+        let busyPercentage = Math.floor(this.currentWorkload / this.capacity * 100);
+        let result = `${this.clinicName} is ${busyPercentage}% busy today!`;
+        result += '\n';
+        result += `Total profit: ${this.totalProfit.toFixed(2)}$`;
+
+        this.clients.sort((a, b) => a.ownerName.localeCompare(b.ownerName));
+
+        for (const client of this.clients) {
+            client.pets.sort((a, b) => a.petName.localeCompare(b.petName));
+
+            result += '\n';
+            result += `${client.ownerName} with:`;
+
+            for (const pet of client.pets) {
+                result += '\n';
+                result += `---${pet.petName} - a ${pet.kind.toLowerCase()} that needs: ${pet.procedures.join(', ')}`
+            }
+        }
+
+        return result.trim();
     }
 }
 
