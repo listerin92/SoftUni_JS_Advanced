@@ -1,52 +1,8 @@
-Documentation/02. JS-Advanced-Arrays-Exercise.docx
-Documentation/02. JS-Advanced-Arrays-Lab.docx
-Documentation/02. JS-Advanced-Arrays.pptx
-Documentation/{0572162B-2BE7-4F06-9F5B-6BD2AF64DE05}.tmp
-Documentation/03. JS-Advanced-Objects-and-Classes-Lab.docx
-Documentation/03. JS-Advanced-Objects-and-Classes.pptx
-Documentation/{959B3E5C-AB9D-42E2-8BBB-272E101DD911}.tmp
-Documentation/03. JS-Advanced-Objects-and-Classes-Exercise.docx
-Documentation/{AF6EA41C-EDFC-4A4F-91BB-21F10A4D1F46}.tmp
-Documentation/05. JS-Advanced-DOM-Lab.docx
-Documentation/02. JS-Advanced-DOM.pptx
-Dom Manipulation/04. Visited Websites/images/background.png
-Dom Manipulation/04. Visited Websites/images/logo.png
-Dom Manipulation/04. Visited Websites/images/wizard.png
-Dom Manipulation/Screenshots/06. Articles List.gif
-Dom Manipulation/Screenshots/07. Format the Text.gif
-Dom Manipulation/Screenshots/08. Growing Word.gif
-Dom Manipulation/Screenshots/09. Visited Websites.gif
-Documentation/05. JS-Advanced-DOM-Exercise.docx
-Documentation/03. JS-Advanced-Objects-and-Classes-More-Exercise.docx
-Documentation/06. JS-Advanced-DOM-Manipulations-Lab.docx
-Documentation/06. JS-Advanced-DOM-Manipulations.pptx
-Documentation/{3F09A8C3-60B2-498A-8487-3D418FC4670B}.tmp
-Documentation/06. JS-Advanced-Function-Context-Exercise.docx
-Documentation/06. JS-Advanced-Function-Context-Lab.docx
-Documentation/06. JS-Advanced-Lab-Sceleton.zip
-Documentation/06. JS-Advanced-Function-Context.pptx
-Documentation/06. JS-Advanced-DOM-Manipulations-Exercise-Resources.zip
-Documentation/06. JS-Advanced-DOM-Manipulations-Exercise.docx
-Documentation/{36A360E9-0EB1-4A41-8BE3-D37C1E63F552}.tmp
-Documentation/02. JS-Advanced-Object-Composition.pptx
-Documentation/05. JS-Advanced-Object-Composition-Lab.docx
 node_modules/
-Documentation/{5D86676E-E519-4FE2-ACF7-97230D044E13}.tmp
-Documentation/04. JS-Advanced-Advanced-Functions.pptx
-Documentation/10. JS-Advanced-Workshop-Wizard-Side-Scrolling-Game.docx
-Documentation/images.zip
-Documentation/01. Pet Me_Ресурси.zip
-Documentation/{D513BB61-C640-4525-9AE3-768D571AA7D8}.tmp
-Documentation/01. Pet Me_Условия.docx
-Documentation/01. TaskManager_01.Skeleton.zip
-Documentation/Exam Preparation 2020_2.docx
-Documentation/{A33DCB84-FD91-4958-AE17-3CC246069F08}.tmp
-Documentation/03. JS-Advanced-Prototypes-and-Inheritance-Exercise.docx
-Documentation/{CDDD19DF-8178-4B67-9ACA-27A342070E4E}.tmp
-Documentation/03. JS-Advanced-Prototypes-and-Inheritance-Lab.docx
-Documentation/03. JS-Advanced-Prototypes-and-Inheritance.pptx
-Documentation/{42B75A78-F65E-4577-A0C6-A2EB2D4C1617}.tmp
-Documentation/Exam_24_10_2020/01. SoftUni Administration_Problem Description.docx
-Documentation/Exam_24_10_2020/01. SoftUni Administration_Skeleton.zip
-Documentation/Exam_24_10_2020/02. Employees_Problem Description.docx
-Documentation/Exam_24_10_2020/03. Parking_Problem Description.docx
+*.docx
+*.pptx
+*.tmp
+*.zip
+*.gif
+*.png
+*.log

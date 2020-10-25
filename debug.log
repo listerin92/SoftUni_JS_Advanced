@@ -1,1 +1,3 @@
 [1025/105644.781:ERROR:filesystem_win.cc(129)] GetFileAttributes F:\Temp\.profile\Crashpad\attachments\9184b568-8aa9-403c-9f81-c59233e35db0: The system cannot find the path specified. (0x3)
+[1025/175739.980:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
+[1025/182559.318:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
