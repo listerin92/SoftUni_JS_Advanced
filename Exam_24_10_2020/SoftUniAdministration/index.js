@@ -52,18 +52,33 @@ function solve() {
         //newly selected h3
         let selectedH3 = Array.from(document.querySelectorAll('.module > h3'));
         console.log(selectedH3[selectedH3.length - 1].textContent);
-        let h3lowerAsOriginal =  selectedH3[selectedH3.length - 1].textContent.split('-')[0].toLowerCase();
+        let h3lowerAsOriginal = selectedH3[selectedH3.length - 1].textContent.split('-')[0].toLowerCase();
+
         let result = h3lowerAsOriginal.localeCompare(moduleType.value.toLowerCase())
+        //add to the same Module
         if (result == 0) {
-            // select previous h4el and add this one before or behind it.
 
             liEl.appendChild(h4El);
             liEl.appendChild(buttonEl);
             let selectedUl = Array.from(document.querySelectorAll('.module > ul'));
             let lastSelectUl = selectedUl[selectedUl.length - 1];
-
-
             lastSelectUl.appendChild(liEl);
+
+            // select previous h4el and add this one before or behind it.
+            let allDates = Array.from(document.querySelectorAll(`.module`)[0].children[1].children);
+            console.log(allDates[0].textContent.split(' - ')[1]);
+            let newAllDates = allDates.sort((a, b) => {
+                let first = a.textContent.split(' - ')[1].split('/').join('');
+                let second = b.textContent.split(' - ')[1].split('/').join('');
+                return first - second;
+            });
+            for (const liElement of allDates) {
+                liElement.remove();
+            }
+            for (const liElement of newAllDates) {
+                
+                lastSelectUl.appendChild(liElement);
+            }
 
 
         } else {
@@ -81,25 +96,23 @@ function solve() {
     }
     function deleteButtonClicked(event) {
         console.log(event);
-        if (event.target.parentElement.previousSibling == null && 
+        if (event.target.parentElement.previousSibling == null &&
             event.target.parentElement.nextSibling == null) {
             event.target.parentElement.parentElement.parentElement.remove();
             return;
         }
         let top;
         if (event.target.parentElement.nextSibling == null) {
-            
+
             top = event.target.parentElement.previousSibling.localName;
         }
-        else{
+        else {
             top = event.target.parentElement.nextSibling.localName;
 
         }
         let result = top.localeCompare('li');
         if (result == 0) {
             event.target.parentElement.remove();
-
-
         }
     }
 }

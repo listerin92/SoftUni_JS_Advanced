@@ -11,5 +11,15 @@
         "webRoot": "${workspaceFolder}/wwwroot"
     }*/
     "version": "0.2.0",
-    "configurations": []
+    "configurations": [
+
+        {
+            "name": "Launch index.html",
+            "type": "chrome",
+            "request": "launch",
+            "file": "${fileDirname}/index.html"
+        },
+
+    ]
+    
 }
