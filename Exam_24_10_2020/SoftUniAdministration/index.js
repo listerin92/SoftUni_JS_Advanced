@@ -11,13 +11,8 @@ function solve() {
             return;
         }
         event.preventDefault();
-        console.log(inputs);
-        console.log(lectureName.value);
-        console.log(date.value);
-        console.log(moduleType.value);
 
         let divIntrainingSection = Array.from(document.querySelectorAll(`.user-view > .modules`))[0];
-        console.log(divIntrainingSection);
 
         let divEl = document.createElement('div');
         divEl.className = 'module';
@@ -36,7 +31,6 @@ function solve() {
         buttonEl.className = 'red';
         buttonEl.textContent = 'Del';
         buttonEl.addEventListener('click', deleteButtonClicked);
-        console.log(Array.from(document.querySelectorAll('.modules')));
         let modules = Array.from(document.querySelectorAll('.modules'))[0].children[0];
 
         if (!modules) {
@@ -51,7 +45,6 @@ function solve() {
         }
         //newly selected h3
         let selectedH3 = Array.from(document.querySelectorAll('.module > h3'));
-        console.log(selectedH3[selectedH3.length - 1].textContent);
         let h3lowerAsOriginal = selectedH3[selectedH3.length - 1].textContent.split('-')[0].toLowerCase();
 
         let result = h3lowerAsOriginal.localeCompare(moduleType.value.toLowerCase())
@@ -66,7 +59,6 @@ function solve() {
 
             // select previous h4el and add this one before or behind it.
             let allDates = Array.from(document.querySelectorAll(`.module`)[0].children[1].children);
-            console.log(allDates[0].textContent.split(' - ')[1]);
             let newAllDates = allDates.sort((a, b) => {
                 let first = a.textContent.split(' - ')[1].split('/').join('');
                 let second = b.textContent.split(' - ')[1].split('/').join('');
@@ -95,7 +87,6 @@ function solve() {
 
     }
     function deleteButtonClicked(event) {
-        console.log(event);
         if (event.target.parentElement.previousSibling == null &&
             event.target.parentElement.nextSibling == null) {
             event.target.parentElement.parentElement.parentElement.remove();
