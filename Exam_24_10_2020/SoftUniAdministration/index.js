@@ -32,7 +32,7 @@ function solve() {
         buttonEl.textContent = 'Del';
         buttonEl.addEventListener('click', deleteButtonClicked);
         let modules = Array.from(document.querySelectorAll('.modules'))[0].children[0];
-
+        //first Time append
         if (!modules) {
             liEl.appendChild(h4El);
             liEl.appendChild(buttonEl);
@@ -64,9 +64,12 @@ function solve() {
                 let second = b.textContent.split(' - ')[1].split('/').join('');
                 return first - second;
             });
+            
+            // delete all liElements
             for (const liElement of allDates) {
                 liElement.remove();
             }
+            //append new sorted li elements
             for (const liElement of newAllDates) {
                 
                 lastSelectUl.appendChild(liElement);
@@ -77,7 +80,6 @@ function solve() {
             liEl.appendChild(h4El);
             liEl.appendChild(buttonEl);
             ulEl.appendChild(liEl);
-
             divEl.appendChild(h3El);
             divEl.appendChild(ulEl);
             divIntrainingSection.appendChild(divEl);
